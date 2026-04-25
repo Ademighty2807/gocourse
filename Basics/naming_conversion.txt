@@ -1,0 +1,19 @@
+package main
+
+import "fmt"
+
+type Employee struct {
+	FirstName string
+	LastName  string
+	Age       int
+}
+
+func main() {
+	camelCase := "camelCase"
+
+	snakeCase := "snake_case"
+	const SALARY = 50000
+	fmt.Println(camelCase)
+	fmt.Println(snakeCase)
+	fmt.Println(SALARY)
+}

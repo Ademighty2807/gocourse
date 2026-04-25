@@ -1,0 +1,32 @@
+package main
+
+import "fmt"
+
+var firstName string = "Mary"
+var LastName string = "Damilola"
+var surname string = "Adetunji"
+var fullName string = firstName + " " + LastName + " " + surname
+
+var age int = 20
+var school string = "Kwara State University Malete"
+
+var level int = 300
+
+var bfJob string = "Software Engineer"
+
+func main() {
+	bfJob = "Go programmer"
+	fmt.Println("My name is", fullName, "and I am", age, "years old. I am a student of", school, "I am currently in level", level, "and my boyfriend is a", bfJob)
+	// String
+	// fmt.Println(firstName)
+	// var age int = 30
+	// var Student bool = false
+
+	// fmt.Println("Name:", firstName)
+	// fmt.Println("Age:", age)
+	// fmt.Println("Is a:", Student)
+}
+
+func printName() {
+
+}
