@@ -1,0 +1,31 @@
+// Logic operators and examples:
+
+// !  - logical NOT example: !true = false
+// && - logical AND example: true && false = false
+// || - logical OR example: true || false = true
+
+// Bitwise operators and examples:
+
+// &  - bitwise AND example: 5 & 3 = 1
+// |  - bitwise OR example: 5 | 3 = 7
+// ^  - bitwise XOR example: 5 ^ 3 = 6
+// << - left shift example: 5 << 1 = 10
+// >> - right shift example: 5 >> 1 = 2
+
+// Assignment operators and examples:
+
+// =  - assignment example: x = 5
+// += - addition assignment example: x += 3 (equivalent to x = x + 3)
+// -= - subtraction assignment example: x -= 2 (equivalent to x = x - 2)
+// *= - multiplication assignment example: x *= 4 (equivalent to x = x * 4)
+// /= - division assignment example: x /= 2 (equivalent to x = x / 2)
+// %= - modulus assignment example: x %= 3 (equivalent to x = x % 3)
+
+// Comparison operators and examples:
+
+// == - equal to example: 5 == 5 = true
+// != - not equal to example: 5 != 3 = true
+// >  - greater than example: 5 > 3 = true
+// <  - less than example: 5 < 3 = false
+// >= - greater than or equal to example: 5 >= 5 = true
+// <= - less than or equal to example: 5 <= 3 = false

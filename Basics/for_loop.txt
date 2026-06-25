@@ -1,0 +1,63 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// Simple Iteration over a range of numbers
+	// for i := 2; i <= 10; i++ {
+	// 	fmt.Print(i)
+	// }
+
+	// for my girlie
+	// for dammy := 0; dammy <= 1000; dammy++ {
+	// 	fmt.Print("I love you Girlie: ", dammy)
+	// }
+
+	// iterating over a collection
+	// numbers := []int{1, 2, 3, 4, 5, 6}
+
+	// for index, value := range numbers {
+	// 	fmt.Printf("Index: %v, Value: %v", index, value)
+	// }
+
+	// for i := 1; i <= 10; i++ {
+	// 	if i%2 == 0 {
+	// 		continue // skips the even numbers and continues to the next iteration
+	// 	}
+	// 	fmt.Print("Odd Number: ", i)
+
+	// 	if i == 7 {
+	// 		break // breaks the loop when i is equal to 7
+	// 	}
+	// 	fmt.Print(i)
+	// }
+
+	// ASTERISK LAYOUT
+
+	// rows := 5
+
+	// Outer Loop
+	// for i := 1; i <= rows; i++ {
+	// 	// Inner Loop for spaces before the stars
+	// 	for j := 1; j <= rows-i; j++ {
+	// 		fmt.Print(" ")
+	// 	}
+
+	// 	// Inner Loop for stars
+	// 	for k := 1; k <= (2*i - 1); k++ {
+	// 		fmt.Print("*")
+	// 	}
+	// 	fmt.Println() // move to the next line after each row
+	// }
+
+	// for i := range 10 {
+	// 	fmt.Println(10 - i)
+	// }
+	// fmt.Println("End of the loop")
+
+	for i := range 10 {
+		i++
+		fmt.Println(i)
+	}
+}
