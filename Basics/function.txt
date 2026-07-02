@@ -1,0 +1,48 @@
+package main
+
+func main() {
+	// how functions work
+	// func <name>(<parameters list>) <return type> {
+	// 	<function body> code block
+	// return value
+	// }
+	// sum := add(5, 6)
+	// fmt.Println(add(10, 11))
+
+	// greetfunc := func() {
+	// 	fmt.Println("Anonymous function")
+	// }
+	// greetfunc()
+
+	// operation := add
+
+	// result := operation(20, 30)
+
+	// fmt.Println(result)
+
+	result := applyOperation(10, 20, add)
+	println("result 10 + 20 =", result)
+
+	// Returning and using a function
+	multiplyBy2 := createMultiplier(2)
+	println("10 * 2 =", multiplyBy2(10))
+
+}
+
+func add(x, y int) int {
+	return x + y
+}
+
+// function that takes another function as a parameter or augment is called higher order function
+
+func applyOperation(x, y int, operation func(int, int) int) int {
+	return operation(x, y)
+}
+
+// function that returns another function is called closure
+
+func createMultiplier(factor int) func(int) int {
+	return func(x int) int {
+		return x * factor
+	}
+}
