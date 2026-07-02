@@ -1,0 +1,104 @@
+package main
+
+import "fmt"
+
+func main() {
+
+	// fallthrough is used if the code is satisfied and need to read other conditions
+	//  Switch statement in go is (switch case default) || (fallthrough)
+	// switch expression {
+	// case value1:
+	// Code to be executed if expression equals value 1
+	// fallthrough
+	// case value2:
+	// Code to be executed if expression equals value 2
+	// case value3:
+	// Code to be executed if expression equals value 3
+	// default:
+	// Code to be excuted if expression doesnot match ant value
+	//}
+
+	// break is used when the code is satisfied and no need to run order block of code
+	//  Switch statement in go is (switch case break default)
+	// switch expression {
+	// case value1:
+	// Code to be executed if expression equals value 1
+	// break
+	// case value2:
+	// Code to be executed if expression equals value 2
+	// break
+	// case value3:
+	// Code to be executed if expression equals value 3
+	// break
+	// default:
+	// Code to be excuted if expression doesnot match ant value
+	// break
+	//}
+
+	// fruit := "apple"
+
+	// switch fruit {
+	// case "apple":
+	// 	fmt.Println("It's an Apple.")
+	// case "banana":
+	// 	fmt.Println("It's a Banana.")
+	// default:
+	// 	fmt.Println("Unknown Fruit")
+	// }
+
+	// Multiple Conditions
+
+	// day := "Sunday"
+
+	// switch day {
+	// case "Monday", "Tuesday", "Wednesday", "Thursday", "Friday":
+	// 	fmt.Println("It's a week day")
+	// case "Sunday":
+	// 	fmt.Println("It's a weekend")
+	// default:
+	// 	fmt.Println("Invalid day.")
+	// }
+
+	// number := 7
+
+	// switch {
+	// case number < 10:
+	// 	fmt.Println("Number is less than 10")
+	// case number >= 10 && number < 20:
+	// 	fmt.Println("Number is between 10 and 19")
+	// default:
+	// 	fmt.Println("Number is 20 or more")
+	// }
+
+	// num := 2
+
+	// switch {
+	// case num > 1:
+	// 	fmt.Println("Greater than 1")
+	// 	fallthrough // fallthrough in action, if read the first case and not satisfy then next to the case where it's satisfied
+	// case num == 2:
+	// 	fmt.Println("Number is 2")
+	// default:
+	// 	fmt.Println("Not 2")
+	// }
+
+	checkType(10)
+	checkType(3.42)
+	checkType("hello")
+	checkType(true)
+
+}
+
+// it's incorrect to use fallthrough in a type switch
+func checkType(x interface{}) {
+	switch x.(type) {
+	case int:
+		fmt.Println("It's an integer")
+	case float64:
+		fmt.Println("It's a float")
+	case string:
+		fmt.Println("It's a string")
+	default:
+		fmt.Println("Unknown Type")
+	}
+}
