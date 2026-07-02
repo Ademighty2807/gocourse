@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func main() {
+	// RANGE: It is used to iterate over elements in a variety of data structures, such as arrays, slices, maps, strings, and channels.
+	// It returns two values: the index (or key) and the value of the element at that index.
+
+	// Example 1: Iterating over an string
+
+	message := "Hello, World!"
+
+	// for i, v := range message {
+	// 	// fmt.Println(i, v) // i is the index and v is the value of the element at that index
+
+	// 	fmt.Printf("Index: %d, Rune: %c\n", i, v) // Print the index and the rune value
+	// }
+
+	for _, v := range message {
+		// fmt.Println(i, v) // i is the index and v is the value of the element at that index
+
+		fmt.Printf("Rune: %c\n", v) // Print the index and the rune value
+	}
+}
