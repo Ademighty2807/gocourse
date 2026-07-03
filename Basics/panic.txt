@@ -1,0 +1,34 @@
+package main
+
+import "fmt"
+
+// Panic is a built-in function that stops the ordinary
+//  flow of control and begins panicking.
+// When the function F calls panic, execution of F stops, any
+// deferred functions in F are executed normally,
+//  and then F returns to its caller. To the caller,
+//  F then behaves like a call to panic.
+//  The process continues up the stack until all
+// functions in the current goroutine have returned,
+//  at which point the program crashes.
+func main() {
+	// panic(interface{}) stops the ordinary flow of control and begins panicking.
+	process(10)
+	process(-5) // This will cause a panic
+}
+
+// any statement after panic will not be executed, and the program will terminate with a panic message.
+
+func process(input int) {
+
+	defer fmt.Println("Deferred function executed. Cleaning up resources.")
+	defer fmt.Println("This will be printed even if a panic occurs.")
+	if input < 0 {
+		fmt.Println("Before panic.")
+		panic("input cannot be negative number")
+		fmt.Println("After panic.") // This line will not be executed
+
+		defer fmt.Println("This will not be printed because the program has panicked.")
+	}
+	fmt.Println("Processing input:", input)
+}
