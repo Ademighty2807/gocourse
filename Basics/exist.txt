@@ -1,0 +1,29 @@
+package main
+
+import (
+	"fmt"
+	"os"
+)
+
+func main() {
+	defer fmt.Println("Deferred statement")
+
+	fmt.Println("Starting the main function")
+
+	// Exist with status code of 1
+
+	os.Exit(1)
+
+	// This will never be executed
+
+	fmt.Println("End of main function")
+}
+
+// Practical Use Cases
+// 1. Error Handling
+// 2. Termination Conditions
+// 3. Exit codes
+// Best Practices
+// 1. Avoid Deferred Actions
+// 2. Status Codes
+// 3. Avoid Abusive Use
