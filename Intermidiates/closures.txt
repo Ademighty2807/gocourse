@@ -1,0 +1,59 @@
+package main
+
+import "fmt"
+
+func main() {
+	// sequence := adder()
+	// fmt.Println(sequence())
+	// fmt.Println(sequence())
+	// fmt.Println(sequence())
+	// fmt.Println(sequence())
+	// fmt.Println(sequence())
+	// fmt.Println(sequence())
+
+	// sequence2 := adder()
+	// fmt.Println(sequence2())
+
+	subtracter := func() func(int) int {
+		countdown := 99
+		return func(x int) int {
+			countdown -= x
+			return countdown
+		}
+	}()
+
+	// Subtracter is the function that call the inner function multipy times
+
+	// Using the closure subtracter
+	fmt.Println(subtracter(1))
+	fmt.Println(subtracter(2))
+	fmt.Println(subtracter(3))
+	fmt.Println(subtracter(4))
+	fmt.Println(subtracter(5))
+	fmt.Println(subtracter(6))
+}
+
+func adder() func() int {
+	i := 0
+	fmt.Println("Previous value of 1:", i)
+	return func() int {
+		i++
+		fmt.Println("Added 1 to i")
+		return i
+	}
+}
+
+// Practical Use cases
+// 1. Stateful functions
+// 2. Encapsulation
+// 3. Callbacks
+// Usefulness of closures
+// 1. Encapsulation
+// 2. Flexibility
+// 3. Readability
+// Consideration
+// 1. Memory Usage
+// 2. Concurrency
+// Best Practices
+// 1. Limit Scope
+// 2. Avoid Overuse
