@@ -22,7 +22,7 @@ func main() {
 		}
 	}()
 
-	// Subtracter is the function that call the inner function multipy times
+	// Subtracter is the function that call the inner function multiple times
 
 	// Using the closure subtracter
 	fmt.Println(subtracter(1))
