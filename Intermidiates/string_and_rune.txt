@@ -1,0 +1,85 @@
+package main
+
+import (
+	"fmt"
+	// "unicode/utf8"
+)
+
+func main() {
+	message := "Hello, \n Go!"
+	message1 := "Hello, \tGo!"
+	message2 := "Hello, \rGo!" // Go!lo carriage return
+	message3 := `Hello, Go!`
+	rawMessage := `Hello\nGo`
+
+	fmt.Println(message)
+	fmt.Println(message1)
+	fmt.Println(message2)
+	fmt.Println(rawMessage)
+	fmt.Println(message3)
+
+	// Rune are integer value that represent string characters
+
+	fmt.Println("Lenth of message3 variable is", len(message1))
+
+	fmt.Println("The first character in the messate var is", message[0]) // ASCII The first character in the messate var is 72
+
+	greeting := "Hello" // extra space to have space between
+	name := "Alice"
+	fmt.Println(greeting + name) // HelloAlice
+
+	str1 := "Apple"          // A has an ASCII value of 65
+	str := "apple"           // a has an ASCII value of 97
+	str2 := "Banana"         // b has an ASCII value of 98
+	str3 := "app"            // a has an ASCII value of 97
+	fmt.Println(str1 < str2) // true
+	fmt.Println(str3 < str1) // false
+	fmt.Println(str < str1)  // false
+	fmt.Println(str < str3)  // false, it always compare the ASCII
+
+	for _, char := range message {
+		// fmt.Printf("Character at index %d is %c", i, char)
+		fmt.Printf("%v\n", char)
+	}
+
+	// fmt.Println("Rune count:", utf8.RuneCountInString(greeting))
+
+	// greetingWithName := greeting + name
+	// fmt.Println(greetingWithName)
+
+	var ch rune = 'a'
+
+	jch := 'だ'
+
+	// Every chacracter has a fix integer value
+
+	fmt.Println(jch)
+	fmt.Println(ch)
+
+	fmt.Printf("%c\n", ch)
+	fmt.Printf("%c\n", jch)
+
+	cstr := string(ch)
+
+	fmt.Printf(" Type of cstr is %T", cstr)
+
+	const NIHONGO = "日本語" // Japanese text
+
+	fmt.Println(NIHONGO)
+
+	jhello := "こんにちは" // Japanese hello
+
+	for _, runeValue := range jhello {
+		fmt.Printf("%c\n", runeValue)
+		fmt.Printf("%v\n", runeValue)
+	}
+
+	fmt.Println(jhello[3])
+
+	r := '😆'
+
+	fmt.Printf("%v\n", r)
+	fmt.Printf("%c\n", r)
+
+	// Runes enable precise handling of individual characters and support for diverse languages
+}
