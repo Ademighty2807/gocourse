@@ -23,6 +23,7 @@ func main() {
 // 1. Error Handling
 // 2. Termination Conditions
 // 3. Exit codes
+
 // Best Practices
 // 1. Avoid Deferred Actions
 // 2. Status Codes

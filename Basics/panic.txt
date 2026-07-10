@@ -32,3 +32,11 @@ func process(input int) {
 	}
 	fmt.Println("Processing input:", input)
 }
+
+// A panic is a built-in function that stops the ordinary flow of control and begins panicking. When a function calls panic, execution of that function stops, any deferred functions in that function are executed normally, and then the function returns to its caller. The process continues up the stack until all functions in the current goroutine have returned, at which point the program crashes.
+
+// A deferred function is a function that is scheduled to be executed after the surrounding function returns, regardless of whether the surrounding function returns normally or due to a panic.
+
+// A recover is a built-in function that regains control of a panicking goroutine. It can be used to handle the panic and prevent the program from crashing. When called inside a deferred function, recover returns the value passed to panic. If recover is called outside of a deferred function, it will return nil.
+
+// defer will be executed even if a panic occurs, allowing for cleanup of resources or other necessary actions before the program terminates.
