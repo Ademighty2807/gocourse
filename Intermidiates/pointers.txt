@@ -33,5 +33,5 @@ func main() {
 func modifyValue(ptr *int) {
 	*ptr++
 }
-
+// pointer are used as aurguement is real world senerios
 // A pointer is a variable that stores the memory address of another variable
