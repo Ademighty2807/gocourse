@@ -88,6 +88,8 @@ func main() {
 
 	flt := 9.18
 
+	// flt := 918000000.08
+
 	fmt.Printf("%e\n", flt)
 	fmt.Printf("%f\n", flt)
 	fmt.Printf("%.2f\n", flt)
