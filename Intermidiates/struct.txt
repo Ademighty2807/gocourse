@@ -47,8 +47,8 @@ func main() {
 		firstName: "Jane",
 		age:       25,
 	}
-	p1.address.city = "New York"
-	p1.address.country = "USA"
+	// p1.address.city = "New York"
+	// p1.address.country = "USA"
 	fmt.Println(p.firstName)
 	fmt.Println(p1.firstName)
 	fmt.Println(p.fullName())
