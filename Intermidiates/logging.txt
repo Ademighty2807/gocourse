@@ -1,0 +1,48 @@
+package main
+
+import (
+	"log"
+	"os"
+)
+
+func main() {
+
+	log.Println("This is a log message.")
+
+	log.SetPrefix("INFO: ")
+	log.Println("This is an info message.")
+
+	// Set log flags to include date, time, and file information
+	log.SetFlags(log.Ldate | log.Ltime | log.Lshortfile)
+	log.Println("This is a log message with date, time, and file information.")
+
+	infoLogger.Println("This is an info message using the infoLogger.")
+	warnLogger.Println("This is a warning message using the warnLogger.")
+	errorLogger.Println("This is an error message using the errorLogger.")
+
+	file, err := os.OpenFile("app.log", os.O_CREATE|os.O_WRONLY|os.O_APPEND, 0666)
+
+	if err != nil {
+		log.Fatal("Failed to open log file:", err)
+	}
+	defer file.Close()
+
+	infoLogger1 := log.New(file, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
+	warnLogger1 := log.New(file, "WARN: ", log.Ldate|log.Ltime)
+	errorLogger1 := log.New(file, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
+	debugLogger1 := log.New(file, "DEBUG: ", log.Ldate|log.Ltime|log.Lshortfile)
+
+	debugLogger1.Println("This is a debug message written to the log file.")
+
+	debugLogger1.Println("This is a debug message written to the log file.")
+	warnLogger1.Println("This is a warning message written to the log file.")
+	errorLogger1.Println("This is an error message written to the log file.")
+	infoLogger1.Println("This is an info message written to the log file.")
+
+}
+
+var (
+	infoLogger  = log.New(os.Stdout, "INFO: ", log.Ldate|log.Ltime|log.Lshortfile)
+	warnLogger  = log.New(os.Stdout, "WARN: ", log.Ldate|log.Ltime)
+	errorLogger = log.New(os.Stderr, "ERROR: ", log.Ldate|log.Ltime|log.Lshortfile)
+)

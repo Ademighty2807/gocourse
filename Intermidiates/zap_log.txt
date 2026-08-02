@@ -1,0 +1,23 @@
+package main
+
+import (
+	"fmt"
+
+	"go.uber.org/zap"
+)
+
+func main() {
+	logger, err := zap.NewProduction()
+	if err != nil {
+		fmt.Println("Error in initialization:", err)
+		return
+	}
+
+	defer logger.Sync() // Flushes buffer, if any
+
+	logger.Info("This is an info message")
+	logger.Info("User logged in", zap.String("username", "John Doe"), zap.String("method", "GET"))
+	logger.Debug("This is a debug message")
+	logger.Warn("This is a warning message")
+	logger.Error("This is an error message")
+}
