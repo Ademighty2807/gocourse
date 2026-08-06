@@ -1,0 +1,17 @@
+package main
+
+import (
+	"fmt"
+)
+
+func main() {
+
+	// Go extension uses and best practices
+	1. Use Go extensions to enhance the functionality of your Go applications. Extensions can provide additional features, libraries, or tools that can be integrated seamlessly into your codebase.
+	2. Follow best practices when using Go extensions, such as keeping your code modular, using version control for your extensions, and regularly updating them to benefit from bug fixes and new features.
+	3. Be mindful of the performance implications of using extensions, and ensure that they do not introduce unnecessary overhead or complexity to your application.
+	4. Document your use of extensions clearly, including any configuration or setup steps required for other developers to understand and utilize them effectively.
+
+	Intelisense and code completion features in your IDE can help you discover and utilize Go extensions more efficiently. Take advantage of these tools to improve your development workflow.
+	
+}
