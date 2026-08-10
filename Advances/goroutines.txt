@@ -1,0 +1,63 @@
+package main
+
+import (
+	"fmt"
+	"time"
+)
+
+// Go routines are lightweight threads managed by the Go runtime. They allow concurrent execution of functions, enabling efficient multitasking within a program. In this example, we demonstrate the use of goroutines by creating a simple program that prints messages from both the main function and a goroutine.
+// The main function starts by printing a message, then it launches a goroutine that executes the sayHello function. The program then prints another message from the main function. To ensure that the goroutine has enough time to complete its execution before the program exits, we introduce a sleep delay in the main function.
+// This example illustrates how goroutines can be used to achieve concurrent execution in Go, allowing for more efficient and responsive programs.
+// Goroutines are a fundamental feature of Go, enabling developers to write concurrent code easily. They are created using the `go` keyword followed by a function call. When a goroutine is launched, it runs concurrently with the calling function, allowing multiple functions to execute simultaneously without blocking each other. This makes goroutines an essential tool for building scalable and high-performance applications in Go.
+
+func main() {
+
+	var err error
+	fmt.Print("Beginning program")
+	go sayHello()
+	fmt.Println("After SayHello function call")
+
+	go func() {
+		err = doWork()
+	}()
+
+	// err = go doWork() // This is not accepted
+	err = doWork()
+
+	printNumbers()
+	printLetters()
+
+	time.Sleep(2 * time.Second) // wait for 2 seconds to ensure goroutine has time to finish
+
+	if err != nil {
+		fmt.Println("Error:", err)
+	} else {
+		fmt.Println("Work completed successfully")
+	}
+
+}
+
+func sayHello() {
+	time.Sleep(1 * time.Second) // wait for 1 second to ensure main function prints first
+	fmt.Println("Hello from goroutine")
+}
+
+func printNumbers() {
+	for i := 1; i <= 5; i++ {
+		fmt.Println("Number:", i, time.Now())
+		time.Sleep(500 * time.Millisecond) // wait for 0.5 seconds between prints
+	}
+}
+
+func printLetters() {
+	for _, letter := range []string{"A", "B", "C", "D", "E"} {
+		fmt.Println("Letter:", letter, time.Now())
+		time.Sleep(700 * time.Millisecond) // wait for 0.7 seconds between prints
+	}
+}
+
+func doWork() error {
+	// simulate some work being done
+	time.Sleep(1 * time.Second)
+	return fmt.Errorf("an error occured in doWork")
+}
