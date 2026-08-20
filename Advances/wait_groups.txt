@@ -29,7 +29,7 @@ func main() {
 
 	for i, task := range tasks {
 		worker := Worker{ID: i + 1, Task: task}
-		wg.Add(1)
+		// wg.Add(1)
 		go worker.PerformTask(&wg)
 	}
 
