@@ -31,7 +31,7 @@ func main() {
 
 	stWorker.Start()
 
-	for i := range 7 {
+	for i := range 6 {
 		stWorker.Send(i)
 		time.Sleep(500 * time.Millisecond)
 	}
