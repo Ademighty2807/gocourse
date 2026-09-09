@@ -1,0 +1,34 @@
+package main
+
+import (
+	"fmt"
+	"os/exec"
+	"strings"
+)
+
+func main() {
+
+	cmd := exec.Command("grep", "/C", "foo")
+
+	// Set the input for the command
+
+	cmd.Stdin = strings.NewReader("food is good\nbar \"/C\", is bad\nfoo is great")
+
+	output, err := cmd.Output()
+	if err != nil {
+		println("Error:", err.Error())
+		return
+	}
+
+	fmt.Println("Output:", string(output))
+
+	// cmd := exec.Command("cmd", "/C", "echo Hello World")
+
+	// output, err := cmd.Output()
+	// if err != nil {
+	// 	fmt.Println("Error:", err)
+	// 	return
+	// }
+
+	// fmt.Println("Output:", string(output))
+}
