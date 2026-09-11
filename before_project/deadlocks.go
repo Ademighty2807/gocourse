@@ -1,4 +1,4 @@
-package main
+package cvp
 
 import (
 	"fmt"
@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-func main() {
+func cvp() {
 	var mu1, mu2 sync.Mutex
 
 	go func() {

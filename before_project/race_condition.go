@@ -22,7 +22,7 @@ func (c *counter) getValue() int {
 	return c.count
 }
 
-func main() {
+func before_project() {
 	var wg sync.WaitGroup
 	counter := &counter{}
 
