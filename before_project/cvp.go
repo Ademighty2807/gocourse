@@ -1,4 +1,4 @@
-package cvp
+package main
 
 import (
 	"fmt"
